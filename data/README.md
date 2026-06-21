@@ -1,6 +1,6 @@
 # Data contract
 
-The raw dataset is not committed because it is approximately 647 MB and contains user-level social-media records.
+The raw dataset is approximately 647 MB and contains user-level social-media records.
 
 The dataset is not distributed publicly due to confidentiality restrictions. For data-access questions, contact [ruijiema944@gmail.com](mailto:ruijiema944@gmail.com).
 
