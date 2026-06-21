@@ -26,18 +26,7 @@ The 6.1% estimate is calculated at the **distinct-user level**: rule-confirmed o
 
 ## The analytical story
 
-```mermaid
-flowchart LR
-    A["5.8M raw comments"] --> B["Clean and tokenize"]
-    B --> C["Create weak labels from ownership language"]
-    C --> D["Mask labeling terms to prevent leakage"]
-    D --> E["Word2Vec and TF-IDF features"]
-    E --> F["LR / weighted LR / Random Forest"]
-    F --> G["Cross-validation on AUC-PR"]
-    G --> H["Human-labeled gold-set check"]
-    H --> I["Aggregate probabilities by user"]
-    I --> J["Audience and topic insights"]
-```
+![Analytical storyboard: from weak labels to user-level inference](assets/analytical-storyboard.png)
 
 ### 1. Turning an unlabeled dataset into a supervised problem
 
@@ -90,12 +79,14 @@ The classifier produces one probability per comment. For audience estimates, I a
 
 ```text
 .
-├── README.md
-├── youtube_pet_owner_classification.ipynb
-├── requirements.txt
-├── data/
-│   └── README.md
-└── .gitignore
+|-- README.md
+|-- youtube_pet_owner_classification.ipynb
+|-- requirements.txt
+|-- assets/
+|   `-- analytical-storyboard.png
+|-- data/
+|   `-- README.md
+`-- .gitignore
 ```
 
 Raw comments, user-level labeling files, and local notebook backups are intentionally excluded from version control.
