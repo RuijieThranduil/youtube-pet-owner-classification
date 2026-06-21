@@ -1,0 +1,32 @@
+# Raw and derived data
+animals_comments/
+gold_to_label.csv
+gold_labeled.csv
+*.parquet
+
+# Local notebook history and backups
+archive/
+*.ipynb_checkpoints/
+*_BACKUP.ipynb
+*_PRELOCAL.ipynb
+
+# Python / Spark
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.sparkStaging/
+metastore_db/
+derby.log
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Codex local state
+.agents/
+.codex/
+
