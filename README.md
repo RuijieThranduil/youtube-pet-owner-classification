@@ -2,6 +2,10 @@
 
 > A weakly supervised NLP pipeline built with PySpark to infer pet ownership from unlabeled social-media text, validate predictions against a human-labeled gold set, and translate model outputs into audience insights.
 
+[**View the interactive project showcase**](https://ruijiethranduil.github.io/youtube-pet-owner-classification/showcase/)
+
+The showcase gives recruiters and reviewers a guided view of the workflow, evidence framework, quality controls, and two strictly limited 10-row data previews without exposing the private datasets.
+
 ## Why this project matters
 
 YouTube creators and brands can observe engagement, but they rarely know who is behind it. This project asks a practical audience-intelligence question:
@@ -26,7 +30,7 @@ The 6.1% estimate is calculated at the **distinct-user level**: rule-confirmed o
 
 ## The analytical story
 
-![Analytical storyboard: from weak labels to user-level inference](assets/analytical-storyboard.png)
+The [interactive showcase](https://ruijiethranduil.github.io/youtube-pet-owner-classification/showcase/) presents the complete analytical workflow as a guided, recruiter-friendly case study.
 
 ### 1. Turning an unlabeled dataset into a supervised problem
 
@@ -84,6 +88,13 @@ The classifier produces one probability per comment. For audience estimates, I a
 |-- requirements.txt
 |-- assets/
 |   `-- analytical-storyboard.png
+|-- showcase/
+|   |-- index.html
+|   |-- styles.css
+|   |-- app.js
+|   `-- data/
+|       |-- project-data.js
+|       `-- sample-preview.js
 |-- data/
 |   `-- README.md
 `-- .gitignore
@@ -111,7 +122,7 @@ animals_comments/animals_comments.csv
 
 Expected columns are documented in [`data/README.md`](data/README.md). The notebook uses a one-million-row modeling sample by default so the full workflow can run on a local machine.
 
-## Limitations and next steps
+## Interpretation and roadmap
 
 - Weak negative labels are noisy: absence of ownership language is not proof that a user does not own a pet.
 - The current train/test split is comment-level; a group split by `userid` would provide a stricter estimate of generalization to unseen users.

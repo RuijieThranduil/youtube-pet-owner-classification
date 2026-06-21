@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A recruiter-friendly case study of a weakly supervised PySpark NLP pipeline for pet-owner identification."
+    />
+    <title>Pet Owner Identification · Applied ML Case Study</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-progress" aria-hidden="true"><span id="page-progress-bar"></span></div>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Back to top">
+        <span class="brand-mark">ML</span>
+        <span>Pet-owner inference</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="#workflow">Workflow</a>
+        <a href="#evidence">Evidence</a>
+        <a href="#roadmap">Roadmap</a>
+      </nav>
+      <a class="header-link" href="../youtube_pet_owner_classification.ipynb">Notebook ↗</a>
+    </header>
+
+    <main id="top">
+      <section class="hero section-shell">
+        <div class="hero-atmosphere" aria-hidden="true">
+          <div class="hero-grid"></div>
+          <div class="data-current current-one"><span>COMMENT</span><span>USER_ID</span><span>TOKEN</span><span>VECTOR</span><span>SCORE</span></div>
+          <div class="data-current current-two"><span>UNLABELED</span><span>WEAK LABEL</span><span>MASK</span><span>VALIDATE</span></div>
+          <div class="feature-field">
+            <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+          </div>
+        </div>
+        <div class="hero-copy reveal">
+          <p class="eyebrow" id="meta-label"></p>
+          <h1 id="hero-title"></h1>
+          <p class="hero-summary" id="hero-summary"></p>
+          <div class="stack-list" id="stack-list" aria-label="Technical stack"></div>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#workflow">Explore the workflow</a>
+            <a class="button button-secondary" href="../youtube_pet_owner_classification.ipynb">Inspect the notebook</a>
+          </div>
+        </div>
+
+        <aside class="decision-card reveal" aria-labelledby="decision-heading">
+          <div class="decision-kicker">USER-LEVEL OUTPUT</div>
+          <div class="decision-number" id="decision-value"></div>
+          <h2 id="decision-heading"></h2>
+          <p id="decision-context"></p>
+          <div class="decision-counts" id="decision-counts"></div>
+        </aside>
+        <div class="scroll-cue" aria-hidden="true"><span>SCROLL TO EXPLORE</span><i></i></div>
+      </section>
+
+      <div class="signal-ribbon" aria-hidden="true">
+        <div class="signal-track">
+          <span>WEAK SUPERVISION</span><i></i><span>LEAKAGE CONTROL</span><i></i><span>HUMAN GOLD SET</span><i></i><span>USER-LEVEL INFERENCE</span><i></i>
+          <span>WEAK SUPERVISION</span><i></i><span>LEAKAGE CONTROL</span><i></i><span>HUMAN GOLD SET</span><i></i><span>USER-LEVEL INFERENCE</span><i></i>
+        </div>
+      </div>
+
+      <section class="metric-strip" aria-label="Project highlights">
+        <div class="metric-grid section-shell" id="highlight-grid"></div>
+      </section>
+
+      <section class="section-shell intent-section reveal" aria-labelledby="intent-title">
+        <div class="section-heading compact">
+          <p class="eyebrow">THE PROJECT IN 60 SECONDS</p>
+          <h2 id="intent-title">A clear path from business question to validated signal.</h2>
+        </div>
+        <div class="intent-grid">
+          <article>
+            <span>01 · Problem</span>
+            <h3>A valuable audience question without ready-made labels.</h3>
+            <p>Identify a useful audience signal in millions of unstructured comments where no ownership label exists.</p>
+          </article>
+          <article>
+            <span>02 · Approach</span>
+            <h3>Design the measurement system first.</h3>
+            <p>Create weak supervision, remove leakage, compare baselines, and aggregate predictions at the user level.</p>
+          </article>
+          <article>
+            <span>03 · Proof</span>
+            <h3>Validate with human judgment.</h3>
+            <p>A 300-comment gold set provides the credibility layer: AUC-PR 0.704 and F1 0.655.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-shell data-preview-section" aria-labelledby="data-preview-title">
+        <div class="section-heading reveal">
+          <div>
+            <p class="eyebrow">LOCAL DATA PREVIEW</p>
+            <h2 id="data-preview-title">See the records behind the pipeline.</h2>
+          </div>
+          <p>Two strictly limited 10-row samples show the raw input and human-reviewed evaluation format. Full datasets remain private.</p>
+        </div>
+        <div class="data-preview-panel reveal">
+          <div class="data-preview-tabs" id="data-preview-tabs" role="tablist" aria-label="Choose a data sample"></div>
+          <div class="data-preview-meta" id="data-preview-meta"></div>
+          <div class="data-preview-table-wrap"><table id="data-preview-table"></table></div>
+          <p class="data-access-note">Preview limited to the first 10 local rows. Full data is withheld; contact <a href="mailto:ruijiema944@gmail.com">ruijiema944@gmail.com</a> for access questions.</p>
+        </div>
+      </section>
+
+      <section class="workflow-section" id="workflow" aria-labelledby="workflow-title">
+        <div class="section-shell">
+          <div class="section-heading reveal">
+            <div>
+              <p class="eyebrow">INTERACTIVE WORKFLOW</p>
+              <h2 id="workflow-title">From weak labels to user-level inference.</h2>
+            </div>
+            <p>Choose a stage to inspect how data, features, models, and validation evolve through the pipeline.</p>
+          </div>
+
+          <div class="workflow-rail reveal" id="workflow-rail" role="tablist" aria-label="Project workflow"></div>
+          <div class="workflow-detail reveal" id="workflow-detail" role="tabpanel" tabindex="0"></div>
+        </div>
+      </section>
+
+      <section class="section-shell evidence-section" id="evidence" aria-labelledby="evidence-title">
+        <div class="section-heading reveal">
+          <div>
+            <p class="eyebrow">TWO-LAYER EVIDENCE FRAMEWORK</p>
+            <h2 id="evidence-title">Model selection first. Human validation second.</h2>
+          </div>
+          <p>Cross-validation identifies strong candidates; the human-reviewed gold set establishes a more realistic performance benchmark.</p>
+        </div>
+
+        <div class="evidence-grid">
+          <article class="panel model-panel reveal">
+            <div class="panel-heading">
+              <div>
+                <p class="panel-index">A · INTERNAL MODEL SELECTION</p>
+                <h3>Three-fold CV on weak labels</h3>
+              </div>
+              <div class="metric-switch" role="group" aria-label="Choose model metric">
+                <button class="is-active" data-metric="aucPr" type="button">AUC-PR</button>
+                <button data-metric="f1" type="button">F1</button>
+              </div>
+            </div>
+            <div class="model-chart" id="model-chart"></div>
+            <p class="panel-note">TF-IDF leads the internal comparison and defines a strong candidate for the next validation cycle.</p>
+          </article>
+
+          <article class="panel gold-panel reveal">
+            <div class="panel-heading">
+              <div>
+                <p class="panel-index amber">B · HELD-OUT HUMAN CHECK</p>
+                <h3>Gold-set performance</h3>
+              </div>
+              <span class="sample-pill">n = 300</span>
+            </div>
+            <div class="gold-metrics" id="gold-metrics"></div>
+            <div class="confusion-wrap">
+              <div>
+                <p class="matrix-title">CONFUSION MATRIX</p>
+                <div class="confusion-matrix" id="confusion-matrix"></div>
+              </div>
+              <p>
+                The gold set provides a realistic benchmark beyond agreement with rule-derived labels.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="guardrail-section" aria-labelledby="guardrail-title">
+        <div class="section-shell">
+          <div class="section-heading reveal">
+            <div>
+              <p class="eyebrow">ANALYTICAL GUARDRAILS</p>
+              <h2 id="guardrail-title">Quality controls built into the workflow.</h2>
+            </div>
+          </div>
+          <div class="guardrail-grid" id="guardrail-grid"></div>
+        </div>
+      </section>
+
+      <section class="section-shell limitations-section" id="roadmap" aria-labelledby="roadmap-title">
+        <div class="limitations-card reveal">
+          <div>
+            <p class="eyebrow">INTERPRETATION &amp; ROADMAP</p>
+            <h2 id="roadmap-title">A strong prototype with a clear path to production.</h2>
+            <p>
+              The current analysis establishes a validated audience signal. The next iteration focuses on calibration, unseen-user generalization, and production-ready pipelines.
+            </p>
+          </div>
+          <ol id="roadmap-list"></ol>
+        </div>
+      </section>
+
+      <section class="takeaway-section">
+        <div class="section-shell takeaway-grid reveal">
+          <div>
+            <p class="eyebrow light">RECRUITER TAKEAWAY</p>
+            <h2>This project demonstrates judgment across the full DS lifecycle.</h2>
+          </div>
+          <ul>
+            <li>Frame an ambiguous business question as a measurable target.</li>
+            <li>Recognize and control leakage, imbalance, and evaluation bias.</li>
+            <li>Translate comment-level ML output into a user-level decision.</li>
+          </ul>
+          <div class="takeaway-actions">
+            <a class="button button-light" href="../youtube_pet_owner_classification.ipynb">Open notebook</a>
+            <a class="text-link" href="mailto:ruijiema944@gmail.com">ruijiema944@gmail.com ↗</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer section-shell">
+      <span>Pet-owner inference · Applied ML case study</span>
+      <div>
+        <a href="https://github.com/RuijieThranduil/youtube-pet-owner-classification">GitHub</a>
+        <a href="mailto:ruijiema944@gmail.com">Contact</a>
+      </div>
+    </footer>
+
+    <script src="data/project-data.js"></script>
+    <script src="data/sample-preview.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
